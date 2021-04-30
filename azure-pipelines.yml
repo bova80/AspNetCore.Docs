@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.sln'
+  solution: '/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
