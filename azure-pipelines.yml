@@ -28,3 +28,9 @@ steps:
     SourcePath: 'aspnetcore\tutorials\first-web-api\samples\3.0\TodoApi\bin\Debug\netcoreapp3.0\publish\'
     OutputPath: 'aspnetcore\tutorials\first-web-api\samples\3.0\TodoApi\bin\Debug\netcoreapp3.0\publish\'
 
+- task: OctopusPush@4
+  inputs:
+    OctoConnectedServiceName: 'Octopus Deploy'
+    Space: 'Spaces-1'
+    Package: 'aspnetcore\tutorials\first-web-api\samples\3.0\TodoApi\bin\Debug\netcoreapp3.0\publish\WebApi.$(Build.BuildNumber).zip'
+    Replace: 'false'
