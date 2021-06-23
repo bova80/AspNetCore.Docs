@@ -10,17 +10,20 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '/AspNetCore.Docs/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
-    restoreSolution: '$(solution)'
-
+    command: 'restore'
+    projects: '/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.csproj'
+    feedsToUse: 'select'
+    vstsFeed: 'ebc9d3c9-3ac8-4241-a13a-1543acc8b0ab'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.csproj'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
