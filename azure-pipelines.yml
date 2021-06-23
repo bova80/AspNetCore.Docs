@@ -17,10 +17,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: '/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.csproj'
+    projects: 'aspnetcore/tutorials/first-web-api/samples/3.0/TodoApi/*.csproj'
     feedsToUse: 'select'
     vstsFeed: 'ebc9d3c9-3ac8-4241-a13a-1543acc8b0ab'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '/aspnetcore/tutorials/first-web-api/samples/5.x/TodoApi/*.csproj'
+    projects: 'aspnetcore/tutorials/first-web-api/samples/3.0/TodoApi/*.csproj'
