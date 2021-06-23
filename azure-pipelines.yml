@@ -24,3 +24,8 @@ steps:
   inputs:
     command: 'build'
     projects: 'aspnetcore/tutorials/first-web-api/samples/3.0/TodoApi/*.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
